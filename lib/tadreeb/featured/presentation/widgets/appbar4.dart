@@ -22,7 +22,8 @@ class _Screen77State extends State<Screen77> {
   void initState() {
     super.initState();
     // Call the API method here
-    BlocProvider.of<MonthesCubit>(context).getAllMonths("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2VsbWF6b25lLnRvcGJ1c2luZXNzLmlvL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjk4NTc5MDk1LCJleHAiOjE3MzAxMTUwOTUsIm5iZiI6MTY5ODU3OTA5NSwianRpIjoiNFZ6STFwYzRCeVREWTBWZCIsInN1YiI6IjIzNTciLCJwcnYiOiIyM2JkNWM4OTQ5ZjUwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ed-3abF9AJ_OL31oeFpk7-7SgBaVZFlHzmZq0prGWn0");
+    BlocProvider.of<MonthesCubit>(context).getAllMonths("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2VsbWF6b25lLnRvcGJ1c2luZXNzLmlvL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjk4NTc5MDk1LCJleHAiOjE3MzAxMTUwOTUsIm5iZiI6MTY5ODU3OTA5NSwianRpIjoiNFZ6STFwYzRCeVREWTBWZCIsInN1YiI6IjIzNTciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ed-3abF9AJ_OL31oeFpk7-7SgBaVZFlHzmZq0prGWn0");
+
   }
 
   @override
@@ -202,7 +203,7 @@ class _Screen77State extends State<Screen77> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text("شهر اغسطس"),
+                      Text("${monthes.data?[0]?.name ?? 'Default Month Name'}"),
                       Checkbox(
                         value: isCheckedList[2],
                         shape: CircleBorder(), // جعل العلامة دائرية
@@ -235,11 +236,24 @@ class _Screen77State extends State<Screen77> {
                           width: 200, // Set the width of each item as needed
                           margin: EdgeInsets.all(8.0), // Adjust margin as needed
                           color: Color.fromARGB(255, 31, 149, 161), // Customize the color of the container
-                          child: Center(
-                            child: Text(
-                              'Item $index ',
-                              style: TextStyle(color: Colors.white),
-                            ),
+                          child:  Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "${monthes.data?[0]?.price ?? 'Default Month Name'}",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "${monthes.data?[0]?.freeStatus ?? 'Default Month Name'}",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
                           ),
                         );
                       },
@@ -249,7 +263,7 @@ class _Screen77State extends State<Screen77> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                    //   Text("شهر اغسطس"),
-                      Text("${monthes.data?[0]?.name ?? 'Default Month Name'}"),
+                      Text("${monthes.data?[1]?.name ?? 'Default Month Name'}"),
                       Checkbox(
                         value: isCheckedList[0],
                         shape: CircleBorder(), // جعل العلامة دائرية
@@ -282,11 +296,24 @@ class _Screen77State extends State<Screen77> {
                           width: 200, // Set the width of each item as needed
                           margin: EdgeInsets.all(8.0), // Adjust margin as needed
                           color: Color.fromARGB(255, 31, 149, 161), // Customize the color of the container
-                          child: Center(
-                            child: Text(
-                              'Item $index',
-                              style: TextStyle(color: Colors.white),
-                            ),
+                          child:  Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "${monthes.data?[2]?.price ?? 'Default Month Name'}",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "${monthes.data?[2]?.freeStatus ?? 'Default Month Name'}",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
                           ),
                         );
                       },
@@ -296,7 +323,7 @@ class _Screen77State extends State<Screen77> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text("شهر اغسطس"),
+                      Text("${monthes.data?[2]?.name ?? 'Default Month Name'}"),
                       Checkbox(
                         value:                     isCheckedList[1]
                         ,
@@ -331,11 +358,24 @@ class _Screen77State extends State<Screen77> {
                           width: 200, // Set the width of each item as needed
                           margin: EdgeInsets.all(8.0), // Adjust margin as needed
                           color: Color.fromARGB(255, 31, 149, 161), // Customize the color of the container
-                          child: Center(
-                            child: Text(
-                              'Item',
-                              style: TextStyle(color: Colors.white),
-                            ),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "${monthes.data?[3]?.price ?? 'Default Month Name'}",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "${monthes.data?[3]?.freeStatus ?? 'Default Month Name'}",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
                           ),
                         );
                       },

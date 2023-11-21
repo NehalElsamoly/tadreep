@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import '../../featured/data/model.dart';
 import 'package:dio/dio.dart';
 import '../../featured/data/model.dart';
+import '../../featured/presentation/manager/monthes_state.dart';
 
 class Apiservice {
   late final Dio dio;
@@ -27,9 +28,11 @@ class Apiservice {
       final response = await dio.get(
         'https://elmazone.topbusiness.io/api/payments/all-months',
         options: Options(
-          headers: {'Authorization': 'Bearer $token'},
+          headers: {'Authorization': '$token'},
         ),
+
       );
+      print(response.data);
 
       // Check if the response is successful
       if (response.statusCode == 200) {
@@ -40,6 +43,8 @@ class Apiservice {
         throw Exception('Failed to fetch data');
       }
     } catch (error) {
+      print('Error in getAllMonths: $error');
+   //   emit(MonthesError('Failed to fetch months: $error'));
       // Catch any errors that occurred during the request
       throw Exception('Failed to fetch data');
     }
